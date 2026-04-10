@@ -123,28 +123,28 @@ const INITIAL_CERTIFICATIONS: Certification[] = [
     title: 'Network Defense',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: '/Network_Defense.jpg'
+    imageUrl: 'Network_Defense.jpg'
   },
   {
     id: '2',
     title: 'Network Support and Security',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: '/Network_Support_and_Security.jpg'
+    imageUrl: 'Network_Support_and_Security.jpg'
   },
   {
     id: '3',
     title: 'Network Technician Career Path',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: '/Network_Technician_Career_Path.jpg'
+    imageUrl: 'Network_Technician_Career_Path.jpg'
   },
   {
     id: '4',
     title: 'CompTIA Server+',
     issuer: 'udemy',
     date: '2026',
-    imageUrl: '/CompTIA_Server+.jpg'
+    imageUrl: 'CompTIA_Server+.jpg'
   }
 ];
 
@@ -292,7 +292,7 @@ export default function App() {
             <div className="absolute -inset-4 bg-orange-500/20 rounded-[2rem] blur-2xl group-hover:bg-orange-500/30 transition-all duration-500"></div>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900">
               <img 
-                src="/profile.png" 
+                src="profile.png" 
                 alt="Ceejay J. Alindog" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
