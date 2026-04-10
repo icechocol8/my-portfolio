@@ -24,6 +24,13 @@ import {
   Download
 } from 'lucide-react';
 
+// Import assets
+import profileImg from './assets/profile.png';
+import certDefense from './assets/cert-defense.jpg';
+import certSecurity from './assets/cert-security.jpg';
+import certTechnician from './assets/cert-technician.jpg';
+import certServer from './assets/cert-server.jpg';
+
 // --- Types ---
 
 interface Experience {
@@ -123,28 +130,28 @@ const INITIAL_CERTIFICATIONS: Certification[] = [
     title: 'Network Defense',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: 'cert-defense.jpg'
+    imageUrl: certDefense
   },
   {
     id: '2',
     title: 'Network Support and Security',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: 'cert-security.jpg'
+    imageUrl: certSecurity
   },
   {
     id: '3',
     title: 'Network Technician Career Path',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: 'cert-technician.jpg'
+    imageUrl: certTechnician
   },
   {
     id: '4',
     title: 'CompTIA Server+',
     issuer: 'udemy',
     date: '2026',
-    imageUrl: 'cert-server.jpg'
+    imageUrl: certServer
   }
 ];
 
@@ -292,7 +299,7 @@ export default function App() {
             <div className="absolute -inset-4 bg-orange-500/20 rounded-[2rem] blur-2xl group-hover:bg-orange-500/30 transition-all duration-500"></div>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900">
               <img 
-                src={`${import.meta.env.BASE_URL}profile.png?v=2`} 
+                src={profileImg} 
                 alt="Ceejay J. Alindog" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -379,7 +386,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* Projects Section */}
+        {/* Projects Section - Hidden for now */}
+        {false && (
         <section id="projects">
           <SectionHeading icon={User} title="Featured Projects" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -412,6 +420,7 @@ export default function App() {
             ))}
           </div>
         </section>
+        )}
 
         {/* Certifications Section */}
         <section id="certifications">
@@ -433,7 +442,7 @@ export default function App() {
                 >
                   <div className="aspect-video overflow-hidden bg-zinc-800 relative">
                     <img 
-                      src={`${import.meta.env.BASE_URL}${cert.imageUrl}?v=2`} 
+                      src={cert.imageUrl} 
                       alt={cert.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       referrerPolicy="no-referrer"
@@ -479,7 +488,7 @@ export default function App() {
                   </button>
                   <div className="w-full bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
                     <img 
-                      src={`${import.meta.env.BASE_URL}${selectedCert.imageUrl}?v=2`} 
+                      src={selectedCert.imageUrl} 
                       alt={selectedCert.title} 
                       className="w-full h-auto max-h-[70vh] object-contain mx-auto"
                       referrerPolicy="no-referrer"
