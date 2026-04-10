@@ -5,8 +5,11 @@ import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
+  // Use repository name only when deploying to GitHub Pages
+  const base = process.env.GITHUB_ACTIONS === 'true' ? '/my-portfolio/' : '/';
+
   return {
-    base: process.env.VERCEL ? '/' : '/my-portfolio/',
+    base,
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
