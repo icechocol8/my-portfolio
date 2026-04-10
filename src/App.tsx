@@ -292,13 +292,10 @@ export default function App() {
             <div className="absolute -inset-4 bg-orange-500/20 rounded-[2rem] blur-2xl group-hover:bg-orange-500/30 transition-all duration-500"></div>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900">
               <img 
-                src="profile.png" 
+                src={`${import.meta.env.BASE_URL}profile.png`} 
                 alt="Ceejay J. Alindog" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://picsum.photos/seed/ceejay/800/800";
-                }}
               />
             </div>
           </motion.div>
@@ -436,7 +433,7 @@ export default function App() {
                 >
                   <div className="aspect-video overflow-hidden bg-zinc-800 relative">
                     <img 
-                      src={cert.imageUrl} 
+                      src={`${import.meta.env.BASE_URL}${cert.imageUrl}`} 
                       alt={cert.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       referrerPolicy="no-referrer"
@@ -482,7 +479,7 @@ export default function App() {
                   </button>
                   <div className="w-full bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
                     <img 
-                      src={selectedCert.imageUrl} 
+                      src={`${import.meta.env.BASE_URL}${selectedCert.imageUrl}`} 
                       alt={selectedCert.title} 
                       className="w-full h-auto max-h-[70vh] object-contain mx-auto"
                       referrerPolicy="no-referrer"
