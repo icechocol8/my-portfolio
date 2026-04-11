@@ -123,28 +123,28 @@ const INITIAL_CERTIFICATIONS: Certification[] = [
     title: 'Network Defense',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: '/assets/network_defense.jpg?v=3'
+    imageUrl: 'assets/network_defense.jpg'
   },
   {
     id: '2',
     title: 'Network Support and Security',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: '/assets/network_security.jpg?v=3'
+    imageUrl: 'assets/network_security.jpg'
   },
   {
     id: '3',
     title: 'Network Technician Career Path',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: '/assets/network_technician.jpg?v=3'
+    imageUrl: 'assets/network_technician.jpg'
   },
   {
     id: '4',
     title: 'CompTIA Server+',
     issuer: 'udemy',
     date: '2026',
-    imageUrl: '/assets/comptia_server.jpg?v=3'
+    imageUrl: 'assets/comptia_server.jpg'
   }
 ];
 
@@ -292,13 +292,11 @@ export default function App() {
             <div className="absolute -inset-4 bg-orange-500/20 rounded-[2rem] blur-2xl group-hover:bg-orange-500/30 transition-all duration-500"></div>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900">
               <img 
-                src="/assets/profile.png?v=3" 
+                src={`${import.meta.env.BASE_URL}assets/profile.png`} 
                 alt="Ceejay J. Alindog" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  console.error("Profile image failed to load. Path: /assets/profile.png");
-                  const target = e.target as HTMLImageElement;
-                  target.src = "https://picsum.photos/seed/profile/400/400"; // Fallback to show SOMETHING
+                  console.error("Profile image failed to load. Path:", `${import.meta.env.BASE_URL}assets/profile.png`);
                 }}
               />
             </div>
@@ -439,13 +437,11 @@ export default function App() {
                 >
                   <div className="aspect-video overflow-hidden bg-zinc-800 relative">
                     <img 
-                      src={cert.imageUrl} 
+                      src={`${import.meta.env.BASE_URL}${cert.imageUrl}`} 
                       alt={cert.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       onError={(e) => {
-                        console.error(`Cert image failed to load: ${cert.imageUrl}`);
-                        const target = e.target as HTMLImageElement;
-                        target.src = "https://picsum.photos/seed/cert/400/300";
+                        console.error(`Cert image failed to load: ${import.meta.env.BASE_URL}${cert.imageUrl}`);
                       }}
                     />
                     <div className="absolute inset-0 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -489,7 +485,7 @@ export default function App() {
                   </button>
                   <div className="w-full bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
                     <img 
-                      src={selectedCert.imageUrl} 
+                      src={`${import.meta.env.BASE_URL}${selectedCert.imageUrl}`} 
                       alt={selectedCert.title} 
                       className="w-full h-auto max-h-[70vh] object-contain mx-auto"
                     />
