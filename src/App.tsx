@@ -24,13 +24,6 @@ import {
   Download
 } from 'lucide-react';
 
-// Import assets
-import profileImg from './assets/profile.png';
-import certDefense from './assets/Network_Defense.jpg';
-import certSecurity from './assets/Network_Security.jpg';
-import certTechnician from './assets/Network_Technician.jpg';
-import certServer from './assets/CompTIA_Server.jpg';
-
 // --- Types ---
 
 interface Experience {
@@ -130,28 +123,28 @@ const INITIAL_CERTIFICATIONS: Certification[] = [
     title: 'Network Defense',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: certDefense
+    imageUrl: '/assets/network_defense.jpg?v=3'
   },
   {
     id: '2',
     title: 'Network Support and Security',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: certSecurity
+    imageUrl: '/assets/network_security.jpg?v=3'
   },
   {
     id: '3',
     title: 'Network Technician Career Path',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: certTechnician
+    imageUrl: '/assets/network_technician.jpg?v=3'
   },
   {
     id: '4',
     title: 'CompTIA Server+',
     issuer: 'udemy',
     date: '2026',
-    imageUrl: certServer
+    imageUrl: '/assets/comptia_server.jpg?v=3'
   }
 ];
 
@@ -299,10 +292,14 @@ export default function App() {
             <div className="absolute -inset-4 bg-orange-500/20 rounded-[2rem] blur-2xl group-hover:bg-orange-500/30 transition-all duration-500"></div>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900">
               <img 
-                src={profileImg} 
+                src="/assets/profile.png?v=3" 
                 alt="Ceejay J. Alindog" 
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  console.error("Profile image failed to load. Path: /assets/profile.png");
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://picsum.photos/seed/profile/400/400"; // Fallback to show SOMETHING
+                }}
               />
             </div>
           </motion.div>
@@ -445,7 +442,11 @@ export default function App() {
                       src={cert.imageUrl} 
                       alt={cert.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        console.error(`Cert image failed to load: ${cert.imageUrl}`);
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://picsum.photos/seed/cert/400/300";
+                      }}
                     />
                     <div className="absolute inset-0 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <span className="px-4 py-2 bg-zinc-100 text-zinc-950 text-xs font-bold rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
@@ -491,7 +492,6 @@ export default function App() {
                       src={selectedCert.imageUrl} 
                       alt={selectedCert.title} 
                       className="w-full h-auto max-h-[70vh] object-contain mx-auto"
-                      referrerPolicy="no-referrer"
                     />
                     <div className="p-6 border-t border-zinc-800 bg-zinc-900/50">
                       <h3 className="text-xl font-bold text-zinc-100">{selectedCert.title}</h3>
