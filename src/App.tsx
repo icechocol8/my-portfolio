@@ -292,11 +292,11 @@ export default function App() {
             <div className="absolute -inset-4 bg-orange-500/20 rounded-[2rem] blur-2xl group-hover:bg-orange-500/30 transition-all duration-500"></div>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900">
               <img 
-                src={`${import.meta.env.BASE_URL}assets/profile.png`} 
+                src="assets/profile.png" 
                 alt="Ceejay J. Alindog" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  console.error("Profile image failed to load. Path:", `${import.meta.env.BASE_URL}assets/profile.png`);
+                  console.error("Profile image failed to load. Tried path: assets/profile.png");
                 }}
               />
             </div>
@@ -437,11 +437,11 @@ export default function App() {
                 >
                   <div className="aspect-video overflow-hidden bg-zinc-800 relative">
                     <img 
-                      src={`${import.meta.env.BASE_URL}${cert.imageUrl}`} 
+                      src={cert.imageUrl} 
                       alt={cert.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       onError={(e) => {
-                        console.error(`Cert image failed to load: ${import.meta.env.BASE_URL}${cert.imageUrl}`);
+                        console.error(`Cert image failed to load: ${cert.imageUrl}`);
                       }}
                     />
                     <div className="absolute inset-0 bg-zinc-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -485,7 +485,7 @@ export default function App() {
                   </button>
                   <div className="w-full bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
                     <img 
-                      src={`${import.meta.env.BASE_URL}${selectedCert.imageUrl}`} 
+                      src={selectedCert.imageUrl} 
                       alt={selectedCert.title} 
                       className="w-full h-auto max-h-[70vh] object-contain mx-auto"
                     />

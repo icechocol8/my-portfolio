@@ -5,8 +5,8 @@ import {defineConfig, loadEnv} from 'vite';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
-  // Use repository name only when deploying to GitHub Pages
-  const base = process.env.GITHUB_ACTIONS === 'true' ? '/my-portfolio/' : '/';
+  // Use relative base for maximum portability (GitHub Pages subpaths, Vercel, etc.)
+  const base = './';
 
   return {
     base,
