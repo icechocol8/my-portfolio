@@ -26,10 +26,10 @@ import {
 
 // Import assets
 import profileImg from './assets/profile.png';
-import certDefense from './assets/cert-defense.jpg';
-import certSecurity from './assets/cert-security.jpg';
-import certTechnician from './assets/cert-technician.jpg';
-import certServer from './assets/cert-server.jpg';
+import certDefense from './assets/Network_Defense.jpg';
+import certSecurity from './assets/Network_Security.jpg';
+import certTechnician from './assets/Network_Technician.jpg';
+import certServer from './assets/CompTIA_Server.jpg';
 
 // --- Types ---
 
