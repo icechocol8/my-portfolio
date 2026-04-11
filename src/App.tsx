@@ -24,6 +24,13 @@ import {
   Download
 } from 'lucide-react';
 
+// Import images
+import profileImg from './assets/profile.png';
+import networkDefenseImg from './assets/network_defense.jpg';
+import networkSecurityImg from './assets/network_security.jpg';
+import networkTechnicianImg from './assets/network_technician.jpg';
+import comptiaServerImg from './assets/comptia_server.jpg';
+
 // --- Types ---
 
 interface Experience {
@@ -123,28 +130,28 @@ const INITIAL_CERTIFICATIONS: Certification[] = [
     title: 'Network Defense',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: 'assets/network_defense.jpg'
+    imageUrl: networkDefenseImg
   },
   {
     id: '2',
     title: 'Network Support and Security',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: 'assets/network_security.jpg'
+    imageUrl: networkSecurityImg
   },
   {
     id: '3',
     title: 'Network Technician Career Path',
     issuer: 'Networking Academy',
     date: '2024',
-    imageUrl: 'assets/network_technician.jpg'
+    imageUrl: networkTechnicianImg
   },
   {
     id: '4',
     title: 'CompTIA Server+',
     issuer: 'udemy',
     date: '2026',
-    imageUrl: 'assets/comptia_server.jpg'
+    imageUrl: comptiaServerImg
   }
 ];
 
@@ -292,11 +299,11 @@ export default function App() {
             <div className="absolute -inset-4 bg-orange-500/20 rounded-[2rem] blur-2xl group-hover:bg-orange-500/30 transition-all duration-500"></div>
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-[2rem] overflow-hidden border-2 border-zinc-800 bg-zinc-900">
               <img 
-                src="assets/profile.png" 
+                src={profileImg} 
                 alt="Ceejay J. Alindog" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  console.error("Profile image failed to load. Tried path: assets/profile.png");
+                  console.error("Profile image failed to load.");
                 }}
               />
             </div>
