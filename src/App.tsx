@@ -284,7 +284,7 @@ export default function App() {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="/Ceejay_Alindog_CV.pdf"
+                href="Ceejay_Alindog_CV.pdf"
                 download="Ceejay_Alindog_CV.pdf"
                 className="flex items-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-950 font-bold rounded-xl hover:bg-zinc-200 transition-all active:scale-95"
               >
