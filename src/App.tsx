@@ -70,7 +70,7 @@ const INITIAL_SKILLS = {
   "Hardware & Desktop": ["PC Assembly & Repair", "Hardware Troubleshooting", "OS Deployment", "Peripheral Setup", "BIOS/UEFI"],
   "Networking & Security": ["TCP/IP", "Network Troubleshooting", "LAN/WAN", "Wireless Config", "Network Defense"],
   "IT Operations": ["Active Directory", "Ticketing Systems", "Remote Support", "Backup & Recovery", "M365 Admin"],
-  "Software & Dev": ["JavaScript", "Java", "PHP", "SQL", "CSS", "React", "Git"]
+  "Software & Tools": ["JavaScript", "Java", "PHP", "SQL", "CSS", "React", "Git"]
 };
 
 const INITIAL_EXPERIENCE: Experience[] = [
@@ -238,8 +238,8 @@ export default function App() {
               <span className="text-orange-500">Alindog</span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-lg leading-relaxed">
-              Full-stack developer passionate about building clean, performant, and user-centric web applications. 
-              Turning complex problems into elegant digital solutions.
+              Dedicated IT professional with a strong foundation in infrastructure support, system administration, and network troubleshooting. 
+              Passionate about building and maintaining reliable IT environments, resolving complex technical issues, and delivering efficient, scalable solutions that support overall business operations.
             </p>
 
             <div className="space-y-3 pt-2">
@@ -283,10 +283,14 @@ export default function App() {
               >
                 <Linkedin size={20} />
               </a>
-              <button className="flex items-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-950 font-bold rounded-xl hover:bg-zinc-200 transition-all active:scale-95">
+              <a 
+                href="/Ceejay_Alindog_CV.pdf"
+                download="Ceejay_Alindog_CV.pdf"
+                className="flex items-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-950 font-bold rounded-xl hover:bg-zinc-200 transition-all active:scale-95"
+              >
                 <Download size={18} />
                 Download CV
-              </button>
+              </a>
             </div>
           </motion.div>
 
